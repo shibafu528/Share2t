@@ -1,0 +1,1015 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28AF3DE308E6A95932049676 /* Pods_ShereExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B4D6E9E5ED5C4572898C66 /* Pods_ShereExt.framework */; };
+		5D44FA3E245B1D4600FB066D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44FA3D245B1D4600FB066D /* AppDelegate.m */; };
+		5D44FA41245B1D4600FB066D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44FA40245B1D4600FB066D /* ViewController.m */; };
+		5D44FA43245B1D4800FB066D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D44FA42245B1D4800FB066D /* Assets.xcassets */; };
+		5D44FA46245B1D4800FB066D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D44FA44245B1D4800FB066D /* Main.storyboard */; };
+		5D44FA49245B1D4800FB066D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44FA48245B1D4800FB066D /* main.m */; };
+		5D44FA6B245B241B00FB066D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5D44FA6A245B241B00FB066D /* icon.icns */; };
+		5D44FA6E245B241B00FB066D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44FA6D245B241B00FB066D /* ShareViewController.m */; };
+		5D44FA71245B241B00FB066D /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D44FA6F245B241B00FB066D /* ShareViewController.xib */; };
+		5D44FA76245B241B00FB066D /* ShereExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D44FA68245B241B00FB066D /* ShereExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D9E51AE245E623B0041293C /* libShare2tCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9E51A4245E61F30041293C /* libShare2tCore.a */; };
+		5D9E51B1245E62660041293C /* S2TPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E519B245D7F390041293C /* S2TPicture.m */; };
+		5D9E51B6245E64980041293C /* NSString+S2TExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E51B5245E64980041293C /* NSString+S2TExtension.m */; };
+		5D9E51BE245FE1DE0041293C /* S2TApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9E51BC245FE1DE0041293C /* S2TApiClient.h */; };
+		5D9E51BF245FE1DE0041293C /* S2TApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E51BD245FE1DE0041293C /* S2TApiClient.m */; };
+		5D9E51CE245FF82A0041293C /* Share2tCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E51CD245FF82A0041293C /* Share2tCoreTests.m */; };
+		5D9E51D0245FF82A0041293C /* libShare2tCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9E51A4245E61F30041293C /* libShare2tCore.a */; };
+		5D9E51E224606F1B0041293C /* S2TApiClient+Statuses.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9E51E024606F1B0041293C /* S2TApiClient+Statuses.h */; };
+		5D9E51E324606F1B0041293C /* S2TApiClient+Statuses.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E51E124606F1B0041293C /* S2TApiClient+Statuses.m */; };
+		5D9E51E5246071370041293C /* S2TStatusVisibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E51E4246071370041293C /* S2TStatusVisibility.m */; };
+		5D9E51E92460790B0041293C /* S2TApiClient+Apps.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9E51E72460790B0041293C /* S2TApiClient+Apps.h */; };
+		5D9E51EA2460790B0041293C /* S2TApiClient+Apps.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E51E82460790B0041293C /* S2TApiClient+Apps.m */; };
+		5D9F7C9C24609F1100EB0574 /* S2TMastodonApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F7C9B24609F1100EB0574 /* S2TMastodonApp.m */; };
+		5D9F7CA02460A9C200EB0574 /* S2TMastodonAccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F7C9E2460A9C200EB0574 /* S2TMastodonAccessToken.h */; };
+		5D9F7CA12460A9C200EB0574 /* S2TMastodonAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F7C9F2460A9C200EB0574 /* S2TMastodonAccessToken.m */; };
+		DE52B7CA968DABDEDF1FA5CD /* Pods_Share2tCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB23E5AFC878F3460ECBDF5 /* Pods_Share2tCore.framework */; };
+		E480F49EC254CC98EB7D1ED2 /* Pods_Share2t.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E9B0BAB0B4BBCB479304BC /* Pods_Share2t.framework */; };
+		FBCCB623C95494859ED227C3 /* Pods_Share2tCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09DD673764B511D5C765223 /* Pods_Share2tCoreTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D44FA74245B241B00FB066D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D44FA31245B1D4600FB066D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D44FA67245B241B00FB066D;
+			remoteInfo = ShereExt;
+		};
+		5D9E51AF245E623B0041293C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D44FA31245B1D4600FB066D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D9E51A3245E61F30041293C;
+			remoteInfo = Share2tCore;
+		};
+		5D9E51D1245FF82A0041293C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D44FA31245B1D4600FB066D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D9E51A3245E61F30041293C;
+			remoteInfo = Share2tCore;
+		};
+		5D9E51D6245FF99C0041293C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D44FA31245B1D4600FB066D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D44FA38245B1D4600FB066D;
+			remoteInfo = Share2t;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5D44FA63245B1FD200FB066D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5D44FA76245B241B00FB066D /* ShereExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		19B4D6E9E5ED5C4572898C66 /* Pods_ShereExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShereExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35D796F88CB8C79E43CB9C48 /* Pods-Share2tCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share2tCoreTests.release.xcconfig"; path = "Target Support Files/Pods-Share2tCoreTests/Pods-Share2tCoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		43E9B0BAB0B4BBCB479304BC /* Pods_Share2t.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share2t.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D44FA39245B1D4600FB066D /* Share2t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Share2t.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D44FA3C245B1D4600FB066D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5D44FA3D245B1D4600FB066D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5D44FA3F245B1D4600FB066D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5D44FA40245B1D4600FB066D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5D44FA42245B1D4800FB066D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D44FA45245B1D4800FB066D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D44FA47245B1D4800FB066D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D44FA48245B1D4800FB066D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5D44FA4A245B1D4800FB066D /* Share2t.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Share2t.entitlements; sourceTree = "<group>"; };
+		5D44FA68245B241B00FB066D /* ShereExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShereExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D44FA6A245B241B00FB066D /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		5D44FA6C245B241B00FB066D /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		5D44FA6D245B241B00FB066D /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		5D44FA70245B241B00FB066D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareViewController.xib; sourceTree = "<group>"; };
+		5D44FA72245B241B00FB066D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D44FA73245B241B00FB066D /* ShereExt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShereExt.entitlements; sourceTree = "<group>"; };
+		5D9E519A245D7F390041293C /* S2TPicture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TPicture.h; sourceTree = "<group>"; };
+		5D9E519B245D7F390041293C /* S2TPicture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S2TPicture.m; sourceTree = "<group>"; };
+		5D9E51A4245E61F30041293C /* libShare2tCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShare2tCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D9E51B4245E64520041293C /* NSString+S2TExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+S2TExtension.h"; sourceTree = "<group>"; };
+		5D9E51B5245E64980041293C /* NSString+S2TExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+S2TExtension.m"; sourceTree = "<group>"; };
+		5D9E51BC245FE1DE0041293C /* S2TApiClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TApiClient.h; sourceTree = "<group>"; };
+		5D9E51BD245FE1DE0041293C /* S2TApiClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S2TApiClient.m; sourceTree = "<group>"; };
+		5D9E51CB245FF82A0041293C /* Share2tCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Share2tCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D9E51CD245FF82A0041293C /* Share2tCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Share2tCoreTests.m; sourceTree = "<group>"; };
+		5D9E51CF245FF82A0041293C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D9E51E024606F1B0041293C /* S2TApiClient+Statuses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "S2TApiClient+Statuses.h"; sourceTree = "<group>"; };
+		5D9E51E124606F1B0041293C /* S2TApiClient+Statuses.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "S2TApiClient+Statuses.m"; sourceTree = "<group>"; };
+		5D9E51E4246071370041293C /* S2TStatusVisibility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S2TStatusVisibility.m; sourceTree = "<group>"; };
+		5D9E51E62460714F0041293C /* S2TStatusVisibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TStatusVisibility.h; sourceTree = "<group>"; };
+		5D9E51E72460790B0041293C /* S2TApiClient+Apps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "S2TApiClient+Apps.h"; sourceTree = "<group>"; };
+		5D9E51E82460790B0041293C /* S2TApiClient+Apps.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "S2TApiClient+Apps.m"; sourceTree = "<group>"; };
+		5D9F7C9B24609F1100EB0574 /* S2TMastodonApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S2TMastodonApp.m; sourceTree = "<group>"; };
+		5D9F7C9D2460A0E800EB0574 /* S2TMastodonApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TMastodonApp.h; sourceTree = "<group>"; };
+		5D9F7C9E2460A9C200EB0574 /* S2TMastodonAccessToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TMastodonAccessToken.h; sourceTree = "<group>"; };
+		5D9F7C9F2460A9C200EB0574 /* S2TMastodonAccessToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S2TMastodonAccessToken.m; sourceTree = "<group>"; };
+		5D9F7CA22461B77F00EB0574 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6CB23E5AFC878F3460ECBDF5 /* Pods_Share2tCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share2tCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CEDEDEA540941A916DDE31E /* Pods-Share2t.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share2t.debug.xcconfig"; path = "Target Support Files/Pods-Share2t/Pods-Share2t.debug.xcconfig"; sourceTree = "<group>"; };
+		7AD7A9ED2AEFCDEADD114113 /* Pods-ShereExt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShereExt.debug.xcconfig"; path = "Target Support Files/Pods-ShereExt/Pods-ShereExt.debug.xcconfig"; sourceTree = "<group>"; };
+		835C332D4D2222195C4DB431 /* Pods-Share2tCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share2tCore.release.xcconfig"; path = "Target Support Files/Pods-Share2tCore/Pods-Share2tCore.release.xcconfig"; sourceTree = "<group>"; };
+		8419CA431DA9F57A79B2B759 /* Pods-Share2tCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share2tCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-Share2tCoreTests/Pods-Share2tCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		85B0D6BF91D3450AA7686B1D /* Pods-ShereExt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShereExt.release.xcconfig"; path = "Target Support Files/Pods-ShereExt/Pods-ShereExt.release.xcconfig"; sourceTree = "<group>"; };
+		8A55D440A2FB923D132C8B37 /* Pods-Share2tCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share2tCore.debug.xcconfig"; path = "Target Support Files/Pods-Share2tCore/Pods-Share2tCore.debug.xcconfig"; sourceTree = "<group>"; };
+		D09DD673764B511D5C765223 /* Pods_Share2tCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share2tCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB421E057F8C90AE877FA787 /* Pods-Share2t.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share2t.release.xcconfig"; path = "Target Support Files/Pods-Share2t/Pods-Share2t.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D44FA36245B1D4600FB066D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E480F49EC254CC98EB7D1ED2 /* Pods_Share2t.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D44FA65245B241B00FB066D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D9E51AE245E623B0041293C /* libShare2tCore.a in Frameworks */,
+				28AF3DE308E6A95932049676 /* Pods_ShereExt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9E51A2245E61F30041293C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE52B7CA968DABDEDF1FA5CD /* Pods_Share2tCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9E51C8245FF82A0041293C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D9E51D0245FF82A0041293C /* libShare2tCore.a in Frameworks */,
+				FBCCB623C95494859ED227C3 /* Pods_Share2tCoreTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05B704BDBD30F715534D88C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CEDEDEA540941A916DDE31E /* Pods-Share2t.debug.xcconfig */,
+				DB421E057F8C90AE877FA787 /* Pods-Share2t.release.xcconfig */,
+				8A55D440A2FB923D132C8B37 /* Pods-Share2tCore.debug.xcconfig */,
+				835C332D4D2222195C4DB431 /* Pods-Share2tCore.release.xcconfig */,
+				7AD7A9ED2AEFCDEADD114113 /* Pods-ShereExt.debug.xcconfig */,
+				85B0D6BF91D3450AA7686B1D /* Pods-ShereExt.release.xcconfig */,
+				8419CA431DA9F57A79B2B759 /* Pods-Share2tCoreTests.debug.xcconfig */,
+				35D796F88CB8C79E43CB9C48 /* Pods-Share2tCoreTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5D44FA30245B1D4600FB066D = {
+			isa = PBXGroup;
+			children = (
+				5D9F7CA22461B77F00EB0574 /* README.md */,
+				5D44FA3B245B1D4600FB066D /* Share2t */,
+				5D44FA69245B241B00FB066D /* ShereExt */,
+				5D9E51A5245E61F30041293C /* Share2tCore */,
+				5D9E51CC245FF82A0041293C /* Share2tCoreTests */,
+				5D44FA3A245B1D4600FB066D /* Products */,
+				5D9E51AD245E623B0041293C /* Frameworks */,
+				05B704BDBD30F715534D88C6 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		5D44FA3A245B1D4600FB066D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D44FA39245B1D4600FB066D /* Share2t.app */,
+				5D44FA68245B241B00FB066D /* ShereExt.appex */,
+				5D9E51A4245E61F30041293C /* libShare2tCore.a */,
+				5D9E51CB245FF82A0041293C /* Share2tCoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D44FA3B245B1D4600FB066D /* Share2t */ = {
+			isa = PBXGroup;
+			children = (
+				5D44FA3C245B1D4600FB066D /* AppDelegate.h */,
+				5D44FA3D245B1D4600FB066D /* AppDelegate.m */,
+				5D44FA3F245B1D4600FB066D /* ViewController.h */,
+				5D44FA40245B1D4600FB066D /* ViewController.m */,
+				5D44FA42245B1D4800FB066D /* Assets.xcassets */,
+				5D44FA44245B1D4800FB066D /* Main.storyboard */,
+				5D44FA47245B1D4800FB066D /* Info.plist */,
+				5D44FA48245B1D4800FB066D /* main.m */,
+				5D44FA4A245B1D4800FB066D /* Share2t.entitlements */,
+			);
+			path = Share2t;
+			sourceTree = "<group>";
+		};
+		5D44FA69245B241B00FB066D /* ShereExt */ = {
+			isa = PBXGroup;
+			children = (
+				5D44FA6A245B241B00FB066D /* icon.icns */,
+				5D44FA6C245B241B00FB066D /* ShareViewController.h */,
+				5D44FA6D245B241B00FB066D /* ShareViewController.m */,
+				5D44FA6F245B241B00FB066D /* ShareViewController.xib */,
+				5D44FA72245B241B00FB066D /* Info.plist */,
+				5D44FA73245B241B00FB066D /* ShereExt.entitlements */,
+			);
+			path = ShereExt;
+			sourceTree = "<group>";
+		};
+		5D9E51A5245E61F30041293C /* Share2tCore */ = {
+			isa = PBXGroup;
+			children = (
+				5D9E51BB245FE0AD0041293C /* Mastodon */,
+				5D9E51B3245E635C0041293C /* Extension */,
+				5D9E51B2245E63180041293C /* Entity */,
+			);
+			path = Share2tCore;
+			sourceTree = "<group>";
+		};
+		5D9E51AD245E623B0041293C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43E9B0BAB0B4BBCB479304BC /* Pods_Share2t.framework */,
+				6CB23E5AFC878F3460ECBDF5 /* Pods_Share2tCore.framework */,
+				19B4D6E9E5ED5C4572898C66 /* Pods_ShereExt.framework */,
+				D09DD673764B511D5C765223 /* Pods_Share2tCoreTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D9E51B2245E63180041293C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				5D9E519A245D7F390041293C /* S2TPicture.h */,
+				5D9E519B245D7F390041293C /* S2TPicture.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5D9E51B3245E635C0041293C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5D9E51B4245E64520041293C /* NSString+S2TExtension.h */,
+				5D9E51B5245E64980041293C /* NSString+S2TExtension.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5D9E51BB245FE0AD0041293C /* Mastodon */ = {
+			isa = PBXGroup;
+			children = (
+				5D9F7C9A24609EF900EB0574 /* Entity */,
+				5D9E51C0245FE6A50041293C /* API */,
+				5D9E51BC245FE1DE0041293C /* S2TApiClient.h */,
+				5D9E51BD245FE1DE0041293C /* S2TApiClient.m */,
+				5D9E51E62460714F0041293C /* S2TStatusVisibility.h */,
+				5D9E51E4246071370041293C /* S2TStatusVisibility.m */,
+			);
+			path = Mastodon;
+			sourceTree = "<group>";
+		};
+		5D9E51C0245FE6A50041293C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5D9E51E024606F1B0041293C /* S2TApiClient+Statuses.h */,
+				5D9E51E124606F1B0041293C /* S2TApiClient+Statuses.m */,
+				5D9E51E72460790B0041293C /* S2TApiClient+Apps.h */,
+				5D9E51E82460790B0041293C /* S2TApiClient+Apps.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5D9E51CC245FF82A0041293C /* Share2tCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				5D9E51CD245FF82A0041293C /* Share2tCoreTests.m */,
+				5D9E51CF245FF82A0041293C /* Info.plist */,
+			);
+			path = Share2tCoreTests;
+			sourceTree = "<group>";
+		};
+		5D9F7C9A24609EF900EB0574 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				5D9F7C9D2460A0E800EB0574 /* S2TMastodonApp.h */,
+				5D9F7C9B24609F1100EB0574 /* S2TMastodonApp.m */,
+				5D9F7C9E2460A9C200EB0574 /* S2TMastodonAccessToken.h */,
+				5D9F7C9F2460A9C200EB0574 /* S2TMastodonAccessToken.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5D9E51A0245E61F30041293C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D9E51E224606F1B0041293C /* S2TApiClient+Statuses.h in Headers */,
+				5D9E51BE245FE1DE0041293C /* S2TApiClient.h in Headers */,
+				5D9E51E92460790B0041293C /* S2TApiClient+Apps.h in Headers */,
+				5D9F7CA02460A9C200EB0574 /* S2TMastodonAccessToken.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5D44FA38245B1D4600FB066D /* Share2t */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D44FA4D245B1D4800FB066D /* Build configuration list for PBXNativeTarget "Share2t" */;
+			buildPhases = (
+				929372AF50CA75968F4E1C1B /* [CP] Check Pods Manifest.lock */,
+				5D44FA35245B1D4600FB066D /* Sources */,
+				5D44FA36245B1D4600FB066D /* Frameworks */,
+				5D44FA37245B1D4600FB066D /* Resources */,
+				5D44FA63245B1FD200FB066D /* Embed App Extensions */,
+				58C2C6B93A47366571A1A4B4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D44FA75245B241B00FB066D /* PBXTargetDependency */,
+			);
+			name = Share2t;
+			productName = Share2t;
+			productReference = 5D44FA39245B1D4600FB066D /* Share2t.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5D44FA67245B241B00FB066D /* ShereExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D44FA77245B241B00FB066D /* Build configuration list for PBXNativeTarget "ShereExt" */;
+			buildPhases = (
+				52ACF0B6BFB94DE861C8B06C /* [CP] Check Pods Manifest.lock */,
+				5D44FA64245B241B00FB066D /* Sources */,
+				5D44FA65245B241B00FB066D /* Frameworks */,
+				5D44FA66245B241B00FB066D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D9E51B0245E623B0041293C /* PBXTargetDependency */,
+			);
+			name = ShereExt;
+			productName = ShereExt;
+			productReference = 5D44FA68245B241B00FB066D /* ShereExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5D9E51A3245E61F30041293C /* Share2tCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D9E51AA245E61F30041293C /* Build configuration list for PBXNativeTarget "Share2tCore" */;
+			buildPhases = (
+				EF72925AB1C763682B16D90B /* [CP] Check Pods Manifest.lock */,
+				5D9E51A0245E61F30041293C /* Headers */,
+				5D9E51A1245E61F30041293C /* Sources */,
+				5D9E51A2245E61F30041293C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Share2tCore;
+			productName = Share2tCore;
+			productReference = 5D9E51A4245E61F30041293C /* libShare2tCore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5D9E51CA245FF82A0041293C /* Share2tCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D9E51D3245FF82A0041293C /* Build configuration list for PBXNativeTarget "Share2tCoreTests" */;
+			buildPhases = (
+				7A0E1E99D70112D4D45C3A2D /* [CP] Check Pods Manifest.lock */,
+				5D9E51C7245FF82A0041293C /* Sources */,
+				5D9E51C8245FF82A0041293C /* Frameworks */,
+				5D9E51C9245FF82A0041293C /* Resources */,
+				1B46AC14566CEA77F419028F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D9E51D2245FF82A0041293C /* PBXTargetDependency */,
+				5D9E51D7245FF99C0041293C /* PBXTargetDependency */,
+			);
+			name = Share2tCoreTests;
+			productName = Share2tCoreTests;
+			productReference = 5D9E51CB245FF82A0041293C /* Share2tCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D44FA31245B1D4600FB066D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = S2T;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = shibafu;
+				TargetAttributes = {
+					5D44FA38245B1D4600FB066D = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					5D44FA67245B241B00FB066D = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					5D9E51A3245E61F30041293C = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					5D9E51CA245FF82A0041293C = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 5D44FA34245B1D4600FB066D /* Build configuration list for PBXProject "Share2t" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5D44FA30245B1D4600FB066D;
+			productRefGroup = 5D44FA3A245B1D4600FB066D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D44FA38245B1D4600FB066D /* Share2t */,
+				5D44FA67245B241B00FB066D /* ShereExt */,
+				5D9E51A3245E61F30041293C /* Share2tCore */,
+				5D9E51CA245FF82A0041293C /* Share2tCoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D44FA37245B1D4600FB066D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D44FA43245B1D4800FB066D /* Assets.xcassets in Resources */,
+				5D44FA46245B1D4800FB066D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D44FA66245B241B00FB066D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D44FA71245B241B00FB066D /* ShareViewController.xib in Resources */,
+				5D44FA6B245B241B00FB066D /* icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9E51C9245FF82A0041293C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B46AC14566CEA77F419028F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Share2tCoreTests/Pods-Share2tCoreTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Share2tCoreTests/Pods-Share2tCoreTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Share2tCoreTests/Pods-Share2tCoreTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52ACF0B6BFB94DE861C8B06C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShereExt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58C2C6B93A47366571A1A4B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Share2t/Pods-Share2t-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Share2t/Pods-Share2t-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Share2t/Pods-Share2t-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A0E1E99D70112D4D45C3A2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Share2tCoreTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		929372AF50CA75968F4E1C1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Share2t-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF72925AB1C763682B16D90B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Share2tCore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D44FA35245B1D4600FB066D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D44FA41245B1D4600FB066D /* ViewController.m in Sources */,
+				5D44FA49245B1D4800FB066D /* main.m in Sources */,
+				5D44FA3E245B1D4600FB066D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D44FA64245B241B00FB066D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D44FA6E245B241B00FB066D /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9E51A1245E61F30041293C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D9E51B6245E64980041293C /* NSString+S2TExtension.m in Sources */,
+				5D9E51E324606F1B0041293C /* S2TApiClient+Statuses.m in Sources */,
+				5D9F7C9C24609F1100EB0574 /* S2TMastodonApp.m in Sources */,
+				5D9E51BF245FE1DE0041293C /* S2TApiClient.m in Sources */,
+				5D9F7CA12460A9C200EB0574 /* S2TMastodonAccessToken.m in Sources */,
+				5D9E51B1245E62660041293C /* S2TPicture.m in Sources */,
+				5D9E51E5246071370041293C /* S2TStatusVisibility.m in Sources */,
+				5D9E51EA2460790B0041293C /* S2TApiClient+Apps.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D9E51C7245FF82A0041293C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D9E51CE245FF82A0041293C /* Share2tCoreTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D44FA75245B241B00FB066D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D44FA67245B241B00FB066D /* ShereExt */;
+			targetProxy = 5D44FA74245B241B00FB066D /* PBXContainerItemProxy */;
+		};
+		5D9E51B0245E623B0041293C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D9E51A3245E61F30041293C /* Share2tCore */;
+			targetProxy = 5D9E51AF245E623B0041293C /* PBXContainerItemProxy */;
+		};
+		5D9E51D2245FF82A0041293C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D9E51A3245E61F30041293C /* Share2tCore */;
+			targetProxy = 5D9E51D1245FF82A0041293C /* PBXContainerItemProxy */;
+		};
+		5D9E51D7245FF99C0041293C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D44FA38245B1D4600FB066D /* Share2t */;
+			targetProxy = 5D9E51D6245FF99C0041293C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5D44FA44245B1D4800FB066D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D44FA45245B1D4800FB066D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5D44FA6F245B241B00FB066D /* ShareViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D44FA70245B241B00FB066D /* Base */,
+			);
+			name = ShareViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D44FA4B245B1D4800FB066D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5D44FA4C245B1D4800FB066D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5D44FA4E245B1D4800FB066D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CEDEDEA540941A916DDE31E /* Pods-Share2t.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Share2t/Share2t.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Share2t/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.shibafu528.Share2t;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5D44FA4F245B1D4800FB066D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB421E057F8C90AE877FA787 /* Pods-Share2t.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Share2t/Share2t.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Share2t/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.shibafu528.Share2t;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5D44FA78245B241B00FB066D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AD7A9ED2AEFCDEADD114113 /* Pods-ShereExt.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShereExt/ShereExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ShereExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.shibafu528.Share2t.ShereExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5D44FA79245B241B00FB066D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85B0D6BF91D3450AA7686B1D /* Pods-ShereExt.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShereExt/ShereExt.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ShereExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.shibafu528.Share2t.ShereExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5D9E51AB245E61F30041293C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A55D440A2FB923D132C8B37 /* Pods-Share2tCore.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5D9E51AC245E61F30041293C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 835C332D4D2222195C4DB431 /* Pods-Share2tCore.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5D9E51D4245FF82A0041293C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8419CA431DA9F57A79B2B759 /* Pods-Share2tCoreTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Share2tCoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.shibafu528.Share2tCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5D9E51D5245FF82A0041293C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35D796F88CB8C79E43CB9C48 /* Pods-Share2tCoreTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Share2tCoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.shibafu528.Share2tCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D44FA34245B1D4600FB066D /* Build configuration list for PBXProject "Share2t" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D44FA4B245B1D4800FB066D /* Debug */,
+				5D44FA4C245B1D4800FB066D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D44FA4D245B1D4800FB066D /* Build configuration list for PBXNativeTarget "Share2t" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D44FA4E245B1D4800FB066D /* Debug */,
+				5D44FA4F245B1D4800FB066D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D44FA77245B241B00FB066D /* Build configuration list for PBXNativeTarget "ShereExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D44FA78245B241B00FB066D /* Debug */,
+				5D44FA79245B241B00FB066D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D9E51AA245E61F30041293C /* Build configuration list for PBXNativeTarget "Share2tCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D9E51AB245E61F30041293C /* Debug */,
+				5D9E51AC245E61F30041293C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D9E51D3245FF82A0041293C /* Build configuration list for PBXNativeTarget "Share2tCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D9E51D4245FF82A0041293C /* Debug */,
+				5D9E51D5245FF82A0041293C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D44FA31245B1D4600FB066D /* Project object */;
+}
