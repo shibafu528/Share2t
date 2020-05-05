@@ -33,4 +33,28 @@
                  failure:failure];
 }
 
+- (nonnull NSURLSessionDataTask *)postMedia:(nonnull S2TPicture *)file
+                                description:(nullable NSString *)description
+                                    success:(nullable S2TApiPostMediaSuccessCallback)success
+                                    failure:(nullable S2TApiFailureCallback)failure {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    if (description) {
+        params[@"description"] = description;
+    }
+    
+    AFHTTPSessionManager *manager = self.manager;
+    return [manager POST:@"/api/v1/media" parameters:params headers:self.defaultHeaders
+constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:file.data
+                                    name:@"file"
+                                fileName:[@"media" stringByAppendingString:file.extension]
+                                mimeType:file.mimeType];
+    }
+                progress:nil
+                 success:^(NSURLSessionDataTask* task, id responseObject) {
+        success(task, responseObject[@"id"]);
+    }
+                 failure:failure];
+}
+
 @end

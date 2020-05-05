@@ -13,9 +13,16 @@ typedef NS_ENUM(NSInteger, S2PictureFormat) {
 
 @interface S2TPicture : NSObject
 
+@property (nonatomic, copy, readonly) NSData *data;
+@property (nonatomic, readonly) S2PictureFormat format;
+
 - (instancetype) init __attribute__((unavailable("init is not available")));
 
 - (instancetype) initWithData:(NSData*)data format:(S2PictureFormat)format;
+
+- (NSString*) extension;
+
+- (NSString*) mimeType;
 
 @end
 
