@@ -17,6 +17,9 @@
 
     // Do any additional setup after loading the view.
     self.data = @[@"Nono", @"Syoko", @"Mirei"];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults addObserver:self forKeyPath:@"Accounts" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -43,6 +46,16 @@
         [self performSegueWithIdentifier:@"AddAccount" sender:sender];
     } else {
         // Delete account
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+                       context:(void *)context {
+    if ([keyPath isEqualToString:@"Accounts"]) {
+        NSLog(@"object = %@", object);
+        NSLog(@"change = %@", change);
     }
 }
 

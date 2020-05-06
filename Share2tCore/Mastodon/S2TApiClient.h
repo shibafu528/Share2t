@@ -28,5 +28,6 @@ typedef void (^S2TApiFailureCallback)(NSURLSessionDataTask *__nullable task, NSE
 
 NS_ASSUME_NONNULL_END
 
+#import "API/S2TApiClient+Accounts.h"
 #import "API/S2TApiClient+Apps.h"
 #import "API/S2TApiClient+Statuses.h"

@@ -18,6 +18,10 @@
 		5D44FA71245B241B00FB066D /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D44FA6F245B241B00FB066D /* ShareViewController.xib */; };
 		5D44FA76245B241B00FB066D /* ShereExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D44FA68245B241B00FB066D /* ShereExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5D7F1B102462E47D00D4B702 /* AddAccountTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7F1B0F2462E47D00D4B702 /* AddAccountTabViewController.m */; };
+		5D7F1B13246319B600D4B702 /* S2TApiClient+Accounts.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D7F1B11246319B600D4B702 /* S2TApiClient+Accounts.h */; };
+		5D7F1B14246319B600D4B702 /* S2TApiClient+Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7F1B12246319B600D4B702 /* S2TApiClient+Accounts.m */; };
+		5D7F1B1724631A8500D4B702 /* S2TMastodonAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D7F1B1524631A8500D4B702 /* S2TMastodonAccount.h */; };
+		5D7F1B1824631A8500D4B702 /* S2TMastodonAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7F1B1624631A8500D4B702 /* S2TMastodonAccount.m */; };
 		5D9E51AE245E623B0041293C /* libShare2tCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9E51A4245E61F30041293C /* libShare2tCore.a */; };
 		5D9E51B1245E62660041293C /* S2TPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E519B245D7F390041293C /* S2TPicture.m */; };
 		5D9E51B6245E64980041293C /* NSString+S2TExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E51B5245E64980041293C /* NSString+S2TExtension.m */; };
@@ -116,6 +120,10 @@
 		5D44FA73245B241B00FB066D /* ShereExt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShereExt.entitlements; sourceTree = "<group>"; };
 		5D7F1B0E2462E47D00D4B702 /* AddAccountTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAccountTabViewController.h; sourceTree = "<group>"; };
 		5D7F1B0F2462E47D00D4B702 /* AddAccountTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAccountTabViewController.m; sourceTree = "<group>"; };
+		5D7F1B11246319B600D4B702 /* S2TApiClient+Accounts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "S2TApiClient+Accounts.h"; sourceTree = "<group>"; };
+		5D7F1B12246319B600D4B702 /* S2TApiClient+Accounts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "S2TApiClient+Accounts.m"; sourceTree = "<group>"; };
+		5D7F1B1524631A8500D4B702 /* S2TMastodonAccount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TMastodonAccount.h; sourceTree = "<group>"; };
+		5D7F1B1624631A8500D4B702 /* S2TMastodonAccount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S2TMastodonAccount.m; sourceTree = "<group>"; };
 		5D9E519A245D7F390041293C /* S2TPicture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TPicture.h; sourceTree = "<group>"; };
 		5D9E519B245D7F390041293C /* S2TPicture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S2TPicture.m; sourceTree = "<group>"; };
 		5D9E51A4245E61F30041293C /* libShare2tCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShare2tCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,6 +333,8 @@
 				5D9E51E124606F1B0041293C /* S2TApiClient+Statuses.m */,
 				5D9E51E72460790B0041293C /* S2TApiClient+Apps.h */,
 				5D9E51E82460790B0041293C /* S2TApiClient+Apps.m */,
+				5D7F1B11246319B600D4B702 /* S2TApiClient+Accounts.h */,
+				5D7F1B12246319B600D4B702 /* S2TApiClient+Accounts.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -345,6 +355,8 @@
 				5D9F7C9B24609F1100EB0574 /* S2TMastodonApp.m */,
 				5D9F7C9E2460A9C200EB0574 /* S2TMastodonAccessToken.h */,
 				5D9F7C9F2460A9C200EB0574 /* S2TMastodonAccessToken.m */,
+				5D7F1B1524631A8500D4B702 /* S2TMastodonAccount.h */,
+				5D7F1B1624631A8500D4B702 /* S2TMastodonAccount.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -357,7 +369,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9E51E224606F1B0041293C /* S2TApiClient+Statuses.h in Headers */,
+				5D7F1B1724631A8500D4B702 /* S2TMastodonAccount.h in Headers */,
 				5D9E51BE245FE1DE0041293C /* S2TApiClient.h in Headers */,
+				5D7F1B13246319B600D4B702 /* S2TApiClient+Accounts.h in Headers */,
 				5D9E51E92460790B0041293C /* S2TApiClient+Apps.h in Headers */,
 				5D9F7CA02460A9C200EB0574 /* S2TMastodonAccessToken.h in Headers */,
 			);
@@ -672,6 +686,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D9E51B6245E64980041293C /* NSString+S2TExtension.m in Sources */,
+				5D7F1B14246319B600D4B702 /* S2TApiClient+Accounts.m in Sources */,
+				5D7F1B1824631A8500D4B702 /* S2TMastodonAccount.m in Sources */,
 				5D9E51E324606F1B0041293C /* S2TApiClient+Statuses.m in Sources */,
 				5D9F7C9C24609F1100EB0574 /* S2TMastodonApp.m in Sources */,
 				5D9E51BF245FE1DE0041293C /* S2TApiClient.m in Sources */,
