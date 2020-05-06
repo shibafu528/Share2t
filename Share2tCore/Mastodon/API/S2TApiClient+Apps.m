@@ -16,7 +16,7 @@ NSString* const S2TDefaultRedirectTo = @"urn:ietf:wg:oauth:2.0:oob";
                                     failure:(nullable S2TApiFailureCallback)failure{
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"client_name"] = clientName;
-    params[@"redirect_to"] = redirectTo;
+    params[@"redirect_uris"] = redirectTo;
     if (scopes) {
         params[@"scopes"] = scopes;
     }
@@ -34,18 +34,25 @@ NSString* const S2TDefaultRedirectTo = @"urn:ietf:wg:oauth:2.0:oob";
                  failure:failure];
 }
 
-- (nonnull NSString *)authorizeURL:(nonnull NSString *)clientId
+- (nonnull NSURL *)authorizeURL:(nonnull NSString *)clientId
                         redirectTo:(nonnull NSString *)redirectTo
                             scopes:(nullable NSString *)scopes {
-    NSArray *params = @[
-        [@"client_id=" stringByAppendingString:clientId],
-        [@"redirect_uri=" stringByAppendingString:redirectTo],
-        @"response_type=code",
+    NSURLComponents *url = [[NSURLComponents alloc] init];
+    url.scheme = @"https";
+    url.host = self.host;
+    url.path = @"/oauth/authorize";
+    
+    NSArray<NSURLQueryItem*> *params = @[
+        [NSURLQueryItem queryItemWithName:@"client_id" value:clientId],
+        [NSURLQueryItem queryItemWithName:@"redirect_uri" value:redirectTo],
+        [NSURLQueryItem queryItemWithName:@"response_type" value:@"code"],
     ];
     if (scopes) {
-        params = [params arrayByAddingObject:[@"scope=" stringByAppendingString:scopes]];
+        params = [params arrayByAddingObject:[NSURLQueryItem queryItemWithName:@"scope" value:scopes]];
     }
-    return [NSString stringWithFormat:@"https://%@/oauth/authorize?%@", self.host, [params componentsJoinedByString:@"&"]];
+    url.queryItems = params;
+
+    return [url URL];
 }
 
 - (nonnull NSURLSessionDataTask *)obtainAccessToken:(nonnull NSString *)clientId
@@ -67,13 +74,13 @@ NSString* const S2TDefaultRedirectTo = @"urn:ietf:wg:oauth:2.0:oob";
     params[@"grant_type"] = grantType ?: @"authorization_code";
     
     AFHTTPSessionManager *manager = self.manager;
-    return [manager GET:@"/oauth/token" parameters:params headers:nil progress:nil
-                success:^(NSURLSessionDataTask *task, id response) {
+    return [manager POST:@"/oauth/token" parameters:params headers:nil progress:nil
+                 success:^(NSURLSessionDataTask *task, id response) {
         if (success) {
             success(task, [MTLJSONAdapter modelOfClass:S2TMastodonAccessToken.class fromJSONDictionary:response error:nil]);
         }
     }
-                failure:failure];
+                 failure:failure];
 }
 
 @end

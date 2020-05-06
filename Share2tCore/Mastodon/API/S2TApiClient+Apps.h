@@ -22,9 +22,9 @@ typedef void (^S2TApiObtainAccessTokenSuccessCallback)(NSURLSessionDataTask *__n
                             success:(nullable S2TApiCreateAppSuccessCallback)success
                             failure:(nullable S2TApiFailureCallback)failure;
 
-- (NSString*) authorizeURL:(NSString*)clientId
-                redirectTo:(NSString*)redirectTo
-                    scopes:(nullable NSString*)scopes;
+- (NSURL*) authorizeURL:(NSString*)clientId
+             redirectTo:(NSString*)redirectTo
+                 scopes:(nullable NSString*)scopes;
 
 - (NSURLSessionDataTask*) obtainAccessToken:(NSString*)clientId
                                clientSecret:(NSString*)clientSecret

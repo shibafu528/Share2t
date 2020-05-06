@@ -17,6 +17,7 @@
 		5D44FA6E245B241B00FB066D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44FA6D245B241B00FB066D /* ShareViewController.m */; };
 		5D44FA71245B241B00FB066D /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D44FA6F245B241B00FB066D /* ShareViewController.xib */; };
 		5D44FA76245B241B00FB066D /* ShereExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D44FA68245B241B00FB066D /* ShereExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D7F1B102462E47D00D4B702 /* AddAccountTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7F1B0F2462E47D00D4B702 /* AddAccountTabViewController.m */; };
 		5D9E51AE245E623B0041293C /* libShare2tCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9E51A4245E61F30041293C /* libShare2tCore.a */; };
 		5D9E51B1245E62660041293C /* S2TPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E519B245D7F390041293C /* S2TPicture.m */; };
 		5D9E51B6245E64980041293C /* NSString+S2TExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9E51B5245E64980041293C /* NSString+S2TExtension.m */; };
@@ -32,6 +33,9 @@
 		5D9F7C9C24609F1100EB0574 /* S2TMastodonApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F7C9B24609F1100EB0574 /* S2TMastodonApp.m */; };
 		5D9F7CA02460A9C200EB0574 /* S2TMastodonAccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9F7C9E2460A9C200EB0574 /* S2TMastodonAccessToken.h */; };
 		5D9F7CA12460A9C200EB0574 /* S2TMastodonAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F7C9F2460A9C200EB0574 /* S2TMastodonAccessToken.m */; };
+		5D9F7CAB2462B44600EB0574 /* AddAccountPrepareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F7CAA2462B44600EB0574 /* AddAccountPrepareViewController.m */; };
+		5D9F7CAC2462BC2400EB0574 /* libShare2tCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9E51A4245E61F30041293C /* libShare2tCore.a */; };
+		5D9F7CB12462CC8800EB0574 /* AddAccountLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F7CB02462CC8800EB0574 /* AddAccountLoginViewController.m */; };
 		DE52B7CA968DABDEDF1FA5CD /* Pods_Share2tCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB23E5AFC878F3460ECBDF5 /* Pods_Share2tCore.framework */; };
 		E480F49EC254CC98EB7D1ED2 /* Pods_Share2t.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E9B0BAB0B4BBCB479304BC /* Pods_Share2t.framework */; };
 		FBCCB623C95494859ED227C3 /* Pods_Share2tCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09DD673764B511D5C765223 /* Pods_Share2tCoreTests.framework */; };
@@ -65,6 +69,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5D44FA38245B1D4600FB066D;
 			remoteInfo = Share2t;
+		};
+		5D9F7CAD2462BC2400EB0574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D44FA31245B1D4600FB066D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D9E51A3245E61F30041293C;
+			remoteInfo = Share2tCore;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -103,6 +114,8 @@
 		5D44FA70245B241B00FB066D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareViewController.xib; sourceTree = "<group>"; };
 		5D44FA72245B241B00FB066D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D44FA73245B241B00FB066D /* ShereExt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShereExt.entitlements; sourceTree = "<group>"; };
+		5D7F1B0E2462E47D00D4B702 /* AddAccountTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAccountTabViewController.h; sourceTree = "<group>"; };
+		5D7F1B0F2462E47D00D4B702 /* AddAccountTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAccountTabViewController.m; sourceTree = "<group>"; };
 		5D9E519A245D7F390041293C /* S2TPicture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TPicture.h; sourceTree = "<group>"; };
 		5D9E519B245D7F390041293C /* S2TPicture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S2TPicture.m; sourceTree = "<group>"; };
 		5D9E51A4245E61F30041293C /* libShare2tCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShare2tCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +137,10 @@
 		5D9F7C9E2460A9C200EB0574 /* S2TMastodonAccessToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TMastodonAccessToken.h; sourceTree = "<group>"; };
 		5D9F7C9F2460A9C200EB0574 /* S2TMastodonAccessToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S2TMastodonAccessToken.m; sourceTree = "<group>"; };
 		5D9F7CA22461B77F00EB0574 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5D9F7CA92462B44600EB0574 /* AddAccountPrepareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAccountPrepareViewController.h; sourceTree = "<group>"; };
+		5D9F7CAA2462B44600EB0574 /* AddAccountPrepareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAccountPrepareViewController.m; sourceTree = "<group>"; };
+		5D9F7CAF2462CC8800EB0574 /* AddAccountLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAccountLoginViewController.h; sourceTree = "<group>"; };
+		5D9F7CB02462CC8800EB0574 /* AddAccountLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAccountLoginViewController.m; sourceTree = "<group>"; };
 		6CB23E5AFC878F3460ECBDF5 /* Pods_Share2tCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share2tCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEDEDEA540941A916DDE31E /* Pods-Share2t.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share2t.debug.xcconfig"; path = "Target Support Files/Pods-Share2t/Pods-Share2t.debug.xcconfig"; sourceTree = "<group>"; };
 		7AD7A9ED2AEFCDEADD114113 /* Pods-ShereExt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShereExt.debug.xcconfig"; path = "Target Support Files/Pods-ShereExt/Pods-ShereExt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D9F7CAC2462BC2400EB0574 /* libShare2tCore.a in Frameworks */,
 				E480F49EC254CC98EB7D1ED2 /* Pods_Share2t.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +243,12 @@
 				5D44FA47245B1D4800FB066D /* Info.plist */,
 				5D44FA48245B1D4800FB066D /* main.m */,
 				5D44FA4A245B1D4800FB066D /* Share2t.entitlements */,
+				5D7F1B0E2462E47D00D4B702 /* AddAccountTabViewController.h */,
+				5D7F1B0F2462E47D00D4B702 /* AddAccountTabViewController.m */,
+				5D9F7CA92462B44600EB0574 /* AddAccountPrepareViewController.h */,
+				5D9F7CAA2462B44600EB0574 /* AddAccountPrepareViewController.m */,
+				5D9F7CAF2462CC8800EB0574 /* AddAccountLoginViewController.h */,
+				5D9F7CB02462CC8800EB0574 /* AddAccountLoginViewController.m */,
 			);
 			path = Share2t;
 			sourceTree = "<group>";
@@ -357,6 +381,7 @@
 			);
 			dependencies = (
 				5D44FA75245B241B00FB066D /* PBXTargetDependency */,
+				5D9F7CAE2462BC2400EB0574 /* PBXTargetDependency */,
 			);
 			name = Share2t;
 			productName = Share2t;
@@ -447,11 +472,12 @@
 			};
 			buildConfigurationList = 5D44FA34245B1D4600FB066D /* Build configuration list for PBXProject "Share2t" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 5D44FA30245B1D4600FB066D;
 			productRefGroup = 5D44FA3A245B1D4600FB066D /* Products */;
@@ -624,7 +650,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D7F1B102462E47D00D4B702 /* AddAccountTabViewController.m in Sources */,
+				5D9F7CAB2462B44600EB0574 /* AddAccountPrepareViewController.m in Sources */,
 				5D44FA41245B1D4600FB066D /* ViewController.m in Sources */,
+				5D9F7CB12462CC8800EB0574 /* AddAccountLoginViewController.m in Sources */,
 				5D44FA49245B1D4800FB066D /* main.m in Sources */,
 				5D44FA3E245B1D4600FB066D /* AppDelegate.m in Sources */,
 			);
@@ -684,6 +713,11 @@
 			target = 5D44FA38245B1D4600FB066D /* Share2t */;
 			targetProxy = 5D9E51D6245FF99C0041293C /* PBXContainerItemProxy */;
 		};
+		5D9F7CAE2462BC2400EB0574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D9E51A3245E61F30041293C /* Share2tCore */;
+			targetProxy = 5D9F7CAD2462BC2400EB0574 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -710,6 +744,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -768,6 +803,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -828,6 +864,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = info.shibafu528.Share2t;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -845,6 +885,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = info.shibafu528.Share2t;
 				PRODUCT_NAME = "$(TARGET_NAME)";

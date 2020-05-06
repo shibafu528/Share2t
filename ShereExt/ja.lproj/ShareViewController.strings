@@ -1,0 +1,36 @@
+
+/* Class = "NSTextFieldCell"; title = "Share2t"; ObjectID = "0xp-rC-2gr"; */
+"0xp-rC-2gr.title" = "Share2t";
+
+/* Class = "NSButtonCell"; title = "送信"; ObjectID = "2l4-PO-we5"; */
+"2l4-PO-we5.title" = "送信";
+
+/* Class = "NSMenuItem"; title = "example@example.com"; ObjectID = "2yN-KH-5RT"; */
+"2yN-KH-5RT.title" = "example@example.com";
+
+/* Class = "NSMenuItem"; title = "公開"; ObjectID = "4Ac-Xc-8Pg"; */
+"4Ac-Xc-8Pg.title" = "公開";
+
+/* Class = "NSButtonCell"; title = "キャンセル"; ObjectID = "6Up-t3-mwm"; */
+"6Up-t3-mwm.title" = "キャンセル";
+
+/* Class = "NSTextFieldCell"; title = "アカウント:"; ObjectID = "8Wg-K4-pQh"; */
+"8Wg-K4-pQh.title" = "アカウント:";
+
+/* Class = "NSMenuItem"; title = "未収載"; ObjectID = "GD7-jR-PNT"; */
+"GD7-jR-PNT.title" = "未収載";
+
+/* Class = "NSTextFieldCell"; title = "500"; ObjectID = "Hzx-52-LIX"; */
+"Hzx-52-LIX.title" = "500";
+
+/* Class = "NSMenuItem"; title = "フォロワー限定"; ObjectID = "NiL-DM-PeU"; */
+"NiL-DM-PeU.title" = "フォロワー限定";
+
+/* Class = "NSTextFieldCell"; title = "With 0 pictures"; ObjectID = "gdf-9q-ngj"; */
+"gdf-9q-ngj.title" = "With 0 pictures";
+
+/* Class = "NSTextFieldCell"; placeholderString = "トゥートの本文を入力…"; ObjectID = "hLQ-T3-fai"; */
+"hLQ-T3-fai.placeholderString" = "トゥートの本文を入力…";
+
+/* Class = "NSTextFieldCell"; title = "公開範囲:"; ObjectID = "lBP-GA-0uO"; */
+"lBP-GA-0uO.title" = "公開範囲:";
