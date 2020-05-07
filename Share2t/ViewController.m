@@ -48,6 +48,29 @@
         [self performSegueWithIdentifier:@"AddAccount" sender:sender];
     } else {
         // Delete account
+        NSInteger selectedRow = self.tableView.selectedRow;
+        if (selectedRow == -1) {
+            return;
+        }
+
+        NSDictionary *account = self.data[selectedRow];
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.alertStyle = NSAlertStyleWarning;
+        alert.messageText = [NSString stringWithFormat:@"アカウント %@@%@ を削除してもよろしいですか？",
+                             account[@"acct"], account[@"domain"]];
+        [alert addButtonWithTitle:@"OK"];
+        [alert addButtonWithTitle:@"キャンセル"];
+        [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
+            if (returnCode != NSAlertFirstButtonReturn) {
+                return;
+            }
+            
+            NSMutableArray *newAccounts = [self.data mutableCopy];
+            [newAccounts removeObjectAtIndex:selectedRow];
+            
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setValue:newAccounts forKey:@"Accounts"];
+        }];
     }
 }
 
