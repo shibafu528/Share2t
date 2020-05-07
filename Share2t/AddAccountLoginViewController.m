@@ -6,6 +6,23 @@
 #import "AddAccountTabViewController.h"
 #import "S2TApiClient.h"
 
+static void StoreAccount(NSString * __nonnull acct,
+                         NSString * __nonnull domain,
+                         NSString * __nonnull accessToken) {
+    NSDictionary *account = @{
+        @"acct": acct,
+        @"domain": domain,
+        @"accessToken": accessToken,
+    };
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *accounts = [defaults arrayForKey:@"Accounts"];
+    if (accounts) {
+        [defaults setValue:[accounts arrayByAddingObject:account] forKey:@"Accounts"];
+    } else {
+        [defaults setValue:@[account] forKey:@"Accounts"];
+    }
+}
+
 @interface AddAccountLoginViewController () <NSTextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet NSTextField *input;
@@ -52,13 +69,12 @@
                          code:self.input.stringValue
                     grantType:nil
                       success:^(NSURLSessionDataTask * _Nonnull task, S2TMastodonAccessToken * _Nonnull accessToken) {
-        NSLog(@"accessToken = %@", accessToken);
-        
         S2TApiClient *userClient = [[S2TApiClient alloc] initWithHost:parent.host
                                                           accessToken:accessToken.accessToken];
         [userClient verifyCredentials:^(NSURLSessionDataTask * _Nonnull task, S2TMastodonAccount * _Nonnull account) {
             NSLog(@"account = %@", account);
-            
+            StoreAccount(account.acct, parent.host, accessToken.accessToken);
+
             NSAlert *alert = [[NSAlert alloc] init];
             alert.alertStyle = NSAlertStyleInformational;
             alert.messageText = @"認証に成功しました!";
@@ -66,20 +82,6 @@
             
             [self.view.window close];
         } failure:onFailure];
-        
-        // TODO: acctを得てから保存する
-//        NSDictionary *account = @{
-//            @"acct": @"example@example.com",
-//            @"domain": parent.host,
-//            @"access_token": accessToken.accessToken,
-//        };
-//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//        NSArray *accounts = [defaults arrayForKey:@"Accounts"];
-//        if (accounts) {
-//            [defaults setValue:[accounts arrayByAddingObject:account] forKey:@"Accounts"];
-//        } else {
-//            [defaults setValue:@[account] forKey:@"Accounts"];
-//        }
     }
                       failure:onFailure];
 }

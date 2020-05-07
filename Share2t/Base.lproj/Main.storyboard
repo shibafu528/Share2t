@@ -475,6 +475,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="Fmn-9c-msV" id="S8b-rK-ubo"/>
                         <segue destination="Zvt-Ka-4CK" kind="modal" identifier="AddAccount" id="FDM-ex-oYr"/>
                     </connections>
                 </viewController>

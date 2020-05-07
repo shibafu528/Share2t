@@ -6,7 +6,9 @@
 
 @interface ViewController () <NSTableViewDelegate, NSTableViewDataSource>
 
-@property (nonatomic) NSArray<NSString*> *data;
+@property (nonatomic, weak) IBOutlet NSTableView *tableView;
+
+@property (nonatomic) NSArray<NSDictionary*> *data;
 
 @end
 
@@ -16,10 +18,9 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    self.data = @[@"Nono", @"Syoko", @"Mirei"];
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults addObserver:self forKeyPath:@"Accounts" options:NSKeyValueObservingOptionNew context:nil];
+    self.data = [defaults arrayForKey:@"Accounts"] ?: @[];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -36,7 +37,8 @@
    viewForTableColumn:(NSTableColumn *)tableColumn
                   row:(NSInteger)row {
     NSTableCellView *view = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-    view.textField.stringValue = self.data[row];
+    view.textField.stringValue = [NSString stringWithFormat:@"%@@%@",
+                                  self.data[row][@"acct"], self.data[row][@"domain"]];
     return view;
 }
 
@@ -54,8 +56,8 @@
                         change:(NSDictionary<NSKeyValueChangeKey,id> *)change
                        context:(void *)context {
     if ([keyPath isEqualToString:@"Accounts"]) {
-        NSLog(@"object = %@", object);
-        NSLog(@"change = %@", change);
+        self.data = [object arrayForKey:@"Accounts"] ?: @[];
+        [self.tableView reloadData];
     }
 }
 
