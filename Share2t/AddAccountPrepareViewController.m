@@ -54,7 +54,7 @@
         NSString* body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"%@", body);
         
-        [[NSAlert alertWithError:error] runModal];
+        [[NSAlert alertWithError:error] beginSheetModalForWindow:self.view.window completionHandler:nil];
         
         self.input.enabled = true;
         self.progressBar.hidden = true;

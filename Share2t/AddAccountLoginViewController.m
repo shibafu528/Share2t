@@ -55,7 +55,7 @@ static void StoreAccount(NSString * __nonnull acct,
         NSString* body = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"%@", body);
         
-        [[NSAlert alertWithError:error] runModal];
+        [[NSAlert alertWithError:error] beginSheetModalForWindow:self.view.window completionHandler:nil];
         
         self.input.enabled = true;
         self.progressBar.hidden = true;
@@ -78,9 +78,9 @@ static void StoreAccount(NSString * __nonnull acct,
             NSAlert *alert = [[NSAlert alloc] init];
             alert.alertStyle = NSAlertStyleInformational;
             alert.messageText = @"認証に成功しました!";
-            [alert runModal];
-            
-            [self.view.window close];
+            [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
+                [self.view.window close];
+            }];
         } failure:onFailure];
     }
                       failure:onFailure];
