@@ -6,12 +6,15 @@
 #import "S2TPicture.h"
 #import "NSString+S2TExtension.h"
 
-@interface ShareViewController () <NSTextFieldDelegate>
+@interface ShareViewController () <NSTextFieldDelegate, NSMenuDelegate>
 
 @property (nonatomic, weak) IBOutlet NSTextField *bodyInput;
 @property (nonatomic, weak) IBOutlet NSTextField *counter;
 @property (nonatomic, weak) IBOutlet NSTextField *picturesCounter;
+@property (nonatomic, weak) IBOutlet NSMenu *accountMenu;
+@property (weak) IBOutlet NSButton *sendButton;
 
+@property (nonatomic) NSArray<NSDictionary*> *accounts;
 @property (nonatomic) NSMutableArray<S2TPicture*> *pictures;
 
 @end
@@ -33,6 +36,22 @@
     [super loadView];
     
     // Insert code here to customize the view
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.accounts = [defaults arrayForKey:@"Accounts"] ?: @[];
+    [self.accountMenu removeAllItems];
+    if (self.accounts.count == 0) {
+        [self.accountMenu addItemWithTitle:@"アカウントが登録されていません" action:nil keyEquivalent:@""];
+        self.sendButton.enabled = false;
+        // TODO: エラー処理
+//        NSAlert *alert = [[NSAlert alloc] init];
+//        alert.alertStyle = NSAlertStyleWarning;
+//        alert.messageText = @"Mastodonアカウントが登録されていません。共有で使う前に、Share2tアプリを起動して設定を行ってください。";
+    } else {
+        for (NSDictionary *account in self.accounts) {
+            [self.accountMenu addItemWithTitle:account[@"acct"] action:nil keyEquivalent:@""];
+        }
+    }
+    
     NSExtensionItem *item = self.extensionContext.inputItems.firstObject;
     NSLog(@"Attachments = %@", item.attachments);
 
@@ -161,6 +180,7 @@
 
 - (void)controlTextDidChange:(NSNotification *)obj {
     [self updateContentCounter];
+    self.sendButton.enabled = self.accounts.count != 0 && self.bodyInput.stringValue.characterCount != 0;
 }
 
 @end

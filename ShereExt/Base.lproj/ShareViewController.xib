@@ -7,9 +7,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ShareViewController">
             <connections>
+                <outlet property="accountMenu" destination="s8A-Hu-os8" id="45f-e7-Mfs"/>
                 <outlet property="bodyInput" destination="vAL-rb-NKl" id="cXC-iG-QfW"/>
                 <outlet property="counter" destination="aYm-P7-Ojf" id="A3t-lc-EMl"/>
                 <outlet property="picturesCounter" destination="pNl-rs-ONM" id="OFy-CX-GT4"/>
+                <outlet property="sendButton" destination="1uM-r7-H1c" id="QzA-Xg-LJc"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
@@ -112,6 +114,9 @@ Gw
                             <items>
                                 <menuItem title="example@example.com" state="on" id="2yN-KH-5RT"/>
                             </items>
+                            <connections>
+                                <outlet property="delegate" destination="-2" id="BsY-CR-7rA"/>
+                            </connections>
                         </menu>
                     </popUpButtonCell>
                 </popUpButton>
@@ -129,7 +134,7 @@ Gw
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aYm-P7-Ojf">
                     <rect key="frame" x="355" y="91" width="25" height="14"/>
                     <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="right" title="500" id="Hzx-52-LIX">
-                        <font key="font" metaFont="message" size="11"/>
+                        <font key="font" metaFont="controlContent" size="11"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -137,7 +142,7 @@ Gw
                 <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pNl-rs-ONM">
                     <rect key="frame" x="8" y="91" width="85" height="14"/>
                     <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" title="With 0 pictures" id="gdf-9q-ngj">
-                        <font key="font" metaFont="message" size="11"/>
+                        <font key="font" metaFont="controlContent" size="11"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
