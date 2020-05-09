@@ -73,7 +73,7 @@
 
             for (NSString *type in [handlers keyEnumerator]) {
                 if ([itemProvider hasItemConformingToTypeIdentifier:type]) {
-                    [itemProvider loadItemForTypeIdentifier:(NSString*)kUTTypeImage
+                    [itemProvider loadItemForTypeIdentifier:type
                                                     options:nil
                                           completionHandler:^(id item, NSError *error) {
 #pragma clang diagnostic push
