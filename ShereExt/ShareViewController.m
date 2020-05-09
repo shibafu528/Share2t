@@ -15,6 +15,7 @@
 @property (nonatomic, weak) IBOutlet NSTextField *picturesCounter;
 @property (nonatomic, weak) IBOutlet NSMenu *accountMenu;
 @property (nonatomic, weak) IBOutlet NSPopUpButton *accountPopUp;
+@property (nonatomic, weak) IBOutlet NSPopUpButton *visibilityPopUp;
 @property (nonatomic, weak) IBOutlet NSButton *sendButton;
 
 @property (nonatomic) NSArray<NSDictionary*> *accounts;
@@ -173,12 +174,11 @@
             return;
         }
 
-        // TODO: visibility
         [client postStatus:self.bodyInput.stringValue
                   mediaIds:mediaIds
                  sensitive:NO
                spoilerText:nil
-                visibility:S2TStatusPublic
+                visibility:(S2TStatusVisibility) self.visibilityPopUp.indexOfSelectedItem
                    success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"Success postStatus: %@", responseObject);
             [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
