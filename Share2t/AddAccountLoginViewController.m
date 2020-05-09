@@ -5,6 +5,7 @@
 #import "AddAccountLoginViewController.h"
 #import "AddAccountTabViewController.h"
 #import "S2TApiClient.h"
+#import "S2TUtils.h"
 
 static void StoreAccount(NSString * __nonnull acct,
                          NSString * __nonnull domain,
@@ -14,7 +15,7 @@ static void StoreAccount(NSString * __nonnull acct,
         @"domain": domain,
         @"accessToken": accessToken,
     };
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = S2TDefaults();
     NSArray *accounts = [defaults arrayForKey:@"Accounts"];
     if (accounts) {
         [defaults setValue:[accounts arrayByAddingObject:account] forKey:@"Accounts"];

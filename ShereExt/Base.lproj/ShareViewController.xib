@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ShareViewController">
             <connections>
                 <outlet property="accountMenu" destination="s8A-Hu-os8" id="45f-e7-Mfs"/>
+                <outlet property="accountPopUp" destination="Uwp-LH-sdR" id="RqP-NS-nF0"/>
                 <outlet property="bodyInput" destination="vAL-rb-NKl" id="cXC-iG-QfW"/>
                 <outlet property="counter" destination="aYm-P7-Ojf" id="A3t-lc-EMl"/>
                 <outlet property="picturesCounter" destination="pNl-rs-ONM" id="OFy-CX-GT4"/>

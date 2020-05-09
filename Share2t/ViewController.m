@@ -3,6 +3,7 @@
 //
 
 #import "ViewController.h"
+#import "S2TUtils.h"
 
 @interface ViewController () <NSTableViewDelegate, NSTableViewDataSource>
 
@@ -18,9 +19,14 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults addObserver:self forKeyPath:@"Accounts" options:NSKeyValueObservingOptionNew context:nil];
+    NSUserDefaults *defaults = S2TDefaults();
     self.data = [defaults arrayForKey:@"Accounts"] ?: @[];
+    // TODO: なんか動かん、しかしNotificationだと頻度高すぎるのでobserver使いたい…
+    // [defaults addObserver:self forKeyPath:@"Accounts" options:NSKeyValueObservingOptionNew context:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(defaultsDidChange:)
+                                                 name:NSUserDefaultsDidChangeNotification
+                                               object:nil];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -68,7 +74,7 @@
             NSMutableArray *newAccounts = [self.data mutableCopy];
             [newAccounts removeObjectAtIndex:selectedRow];
             
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSUserDefaults *defaults = S2TDefaults();
             [defaults setValue:newAccounts forKey:@"Accounts"];
         }];
     }
@@ -82,6 +88,11 @@
         self.data = [object arrayForKey:@"Accounts"] ?: @[];
         [self.tableView reloadData];
     }
+}
+
+- (void)defaultsDidChange:(NSNotification*)notification {
+    self.data = [S2TDefaults() arrayForKey:@"Accounts"] ?: @[];
+    [self.tableView reloadData];
 }
 
 @end

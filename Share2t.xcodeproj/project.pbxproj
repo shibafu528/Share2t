@@ -101,6 +101,7 @@
 		19B4D6E9E5ED5C4572898C66 /* Pods_ShereExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShereExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D796F88CB8C79E43CB9C48 /* Pods-Share2tCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share2tCoreTests.release.xcconfig"; path = "Target Support Files/Pods-Share2tCoreTests/Pods-Share2tCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		43E9B0BAB0B4BBCB479304BC /* Pods_Share2t.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share2t.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D27A1D0246666670034EBA3 /* S2TUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S2TUtils.h; sourceTree = "<group>"; };
 		5D44FA39245B1D4600FB066D /* Share2t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Share2t.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D44FA3C245B1D4600FB066D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5D44FA3D245B1D4600FB066D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -214,6 +215,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5D27A1CF2466663C0034EBA3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5D27A1D0246666670034EBA3 /* S2TUtils.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		5D44FA30245B1D4600FB066D = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +286,7 @@
 		5D9E51A5245E61F30041293C /* Share2tCore */ = {
 			isa = PBXGroup;
 			children = (
+				5D27A1CF2466663C0034EBA3 /* Utils */,
 				5D9E51BB245FE0AD0041293C /* Mastodon */,
 				5D9E51B3245E635C0041293C /* Extension */,
 				5D9E51B2245E63180041293C /* Entity */,
@@ -875,6 +885,7 @@
 				CODE_SIGN_ENTITLEMENTS = Share2t/Share2t.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Share2t/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -897,6 +908,7 @@
 				CODE_SIGN_ENTITLEMENTS = Share2t/Share2t.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Share2t/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -916,8 +928,10 @@
 			baseConfigurationReference = 7AD7A9ED2AEFCDEADD114113 /* Pods-ShereExt.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShereExt/ShereExt.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ShereExt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -939,8 +953,10 @@
 			baseConfigurationReference = 85B0D6BF91D3450AA7686B1D /* Pods-ShereExt.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShereExt/ShereExt.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ShereExt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

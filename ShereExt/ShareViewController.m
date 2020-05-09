@@ -3,8 +3,10 @@
 //
 
 #import "ShareViewController.h"
-#import "S2TPicture.h"
 #import "NSString+S2TExtension.h"
+#import "S2TApiClient.h"
+#import "S2TPicture.h"
+#import "S2TUtils.h"
 
 @interface ShareViewController () <NSTextFieldDelegate, NSMenuDelegate>
 
@@ -12,7 +14,8 @@
 @property (nonatomic, weak) IBOutlet NSTextField *counter;
 @property (nonatomic, weak) IBOutlet NSTextField *picturesCounter;
 @property (nonatomic, weak) IBOutlet NSMenu *accountMenu;
-@property (weak) IBOutlet NSButton *sendButton;
+@property (nonatomic, weak) IBOutlet NSPopUpButton *accountPopUp;
+@property (nonatomic, weak) IBOutlet NSButton *sendButton;
 
 @property (nonatomic) NSArray<NSDictionary*> *accounts;
 @property (nonatomic) NSMutableArray<S2TPicture*> *pictures;
@@ -36,7 +39,7 @@
     [super loadView];
     
     // Insert code here to customize the view
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = S2TDefaults();
     self.accounts = [defaults arrayForKey:@"Accounts"] ?: @[];
     [self.accountMenu removeAllItems];
     if (self.accounts.count == 0) {
@@ -48,7 +51,8 @@
 //        alert.messageText = @"Mastodonアカウントが登録されていません。共有で使う前に、Share2tアプリを起動して設定を行ってください。";
     } else {
         for (NSDictionary *account in self.accounts) {
-            [self.accountMenu addItemWithTitle:account[@"acct"] action:nil keyEquivalent:@""];
+            NSString *fullAcct = [NSString stringWithFormat:@"%@@%@", account[@"acct"], account[@"domain"]];
+            [self.accountMenu addItemWithTitle:fullAcct action:nil keyEquivalent:@""];
         }
     }
     
@@ -154,11 +158,63 @@
 }
 
 - (IBAction)send:(id)sender {
-    NSExtensionItem *outputItem = [[NSExtensionItem alloc] init];
-    // Complete implementation by setting the appropriate value on the output item
-    
-    NSArray *outputItems = @[outputItem];
-    [self.extensionContext completeRequestReturningItems:outputItems completionHandler:nil];
+    NSInteger selectedAccountIndex = self.accountPopUp.indexOfSelectedItem;
+    if (selectedAccountIndex == -1) {
+        return;
+    }
+    NSDictionary *account = self.accounts[selectedAccountIndex];
+    S2TApiClient *client = [[S2TApiClient alloc] initWithHost:account[@"domain"]
+                                                  accessToken:account[@"accessToken"]];
+
+    __block NSMutableArray<NSNumber*> *mediaIds = [NSMutableArray array];
+    __block BOOL cancelPost = NO;
+    __auto_type postBlock = ^{
+        if (cancelPost) {
+            return;
+        }
+
+        // TODO: visibility
+        [client postStatus:self.bodyInput.stringValue
+                  mediaIds:mediaIds
+                 sensitive:NO
+               spoilerText:nil
+                visibility:S2TStatusPublic
+                   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"Success postStatus: %@", responseObject);
+            [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
+        }
+                   failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+            NSLog(@"Error postStatus: %@", error);
+        }];
+    };
+
+    if (self.pictures.count != 0) {
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+        dispatch_group_t uploadGroup = dispatch_group_create();
+
+        for (S2TPicture *picture in self.pictures) {
+            dispatch_group_async(uploadGroup, queue, ^{
+                NSLog(@"Begin postMedia:(%@)", picture);
+                dispatch_semaphore_t sp = dispatch_semaphore_create(0);
+                [client postMedia:picture description:nil
+                          success:^(NSURLSessionDataTask * _Nonnull task, NSNumber * _Nonnull mediaId) {
+                    NSLog(@"Success postMedia:(%@) %@", picture, mediaId);
+                    [mediaIds addObject:mediaId];
+                    dispatch_semaphore_signal(sp);
+                }
+                          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
+                    NSLog(@"Error postMedia:(%@) %@", picture, error);
+                    cancelPost = YES;
+                    dispatch_semaphore_signal(sp);
+                }];
+                dispatch_semaphore_wait(sp, DISPATCH_TIME_FOREVER);
+            });
+        }
+
+        dispatch_group_notify(uploadGroup, queue, postBlock);
+    } else {
+        postBlock();
+    }
 }
 
 - (IBAction)cancel:(id)sender {
