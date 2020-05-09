@@ -97,6 +97,7 @@
     }
     NSLog(@"processImage:WithError: item = (%@) %@", [item className], item);
     if ([item isKindOfClass:NSData.class]) {
+        // FIXME: Dropboxのスマートシンクでストレージに実体がないファイルとか共有してくると、ここで全部nullなDataが入ってくる。なんで?
         NSData *data = (NSData*) item;
         S2TPicture *picture = [[S2TPicture alloc] initWithData:data format:S2PicturePNG];
         [self.pictures addObject:picture];
@@ -184,7 +185,8 @@
             [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
         }
                    failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
-            NSLog(@"Error postStatus: %@", error);
+            NSLog(@"Error postStatus:");
+            WriteAFNetworkingErrorToLog(error);
         }];
     };
 
@@ -194,16 +196,17 @@
 
         for (S2TPicture *picture in self.pictures) {
             dispatch_group_async(uploadGroup, queue, ^{
-                NSLog(@"Begin postMedia:(%@)", picture);
+                NSLog(@"Begin postMedia: %@", picture);
                 dispatch_semaphore_t sp = dispatch_semaphore_create(0);
                 [client postMedia:picture description:nil
                           success:^(NSURLSessionDataTask * _Nonnull task, NSNumber * _Nonnull mediaId) {
-                    NSLog(@"Success postMedia:(%@) %@", picture, mediaId);
+                    NSLog(@"Success postMedia: %@ -> %@", picture, mediaId);
                     [mediaIds addObject:mediaId];
                     dispatch_semaphore_signal(sp);
                 }
                           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
-                    NSLog(@"Error postMedia:(%@) %@", picture, error);
+                    NSLog(@"Error postMedia: %@", picture);
+                    WriteAFNetworkingErrorToLog(error);
                     cancelPost = YES;
                     dispatch_semaphore_signal(sp);
                 }];
