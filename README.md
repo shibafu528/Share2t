@@ -1,7 +1,12 @@
-Share2t
-====
+# Share2t
+
+<div align="center">
+<img src="./Share2t/Assets.xcassets/AppIcon.appiconset/icon_256x256.png">
 
 Share toot!
+</div>
+
+----
 
 ## これなに
 
